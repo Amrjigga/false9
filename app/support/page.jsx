@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ChevronDown, Instagram, Mail } from "lucide-react";
+import { ArrowLeft, ChevronDown, Instagram, Mail, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 const faqs = [
@@ -54,6 +54,11 @@ export default function SupportPage() {
               <Instagram size={22} />
               <span>Instagram</span>
               <strong>@false9.store</strong>
+            </a>
+            <a className="support-link" href="https://wa.me/201505826703" target="_blank" rel="noreferrer">
+              <MessageCircle size={22} />
+              <span>WhatsApp</span>
+              <strong>+20 150 582 6703</strong>
             </a>
           </div>
 
