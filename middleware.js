@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const USERNAME = "false9";
-const PASSWORD = process.env.DASHBOARD_PASSWORD || "false9admin";
+const PASSWORD = process.env.DASHBOARD_PASSWORD;
 
 function unauthorized() {
   return new NextResponse("Dashboard access required.", {
@@ -25,7 +25,7 @@ function isAuthorized(request) {
     const username = decoded.slice(0, separator);
     const password = decoded.slice(separator + 1);
 
-    return username === USERNAME && password === PASSWORD;
+    return Boolean(PASSWORD) && username === USERNAME && password === PASSWORD;
   } catch {
     return false;
   }
